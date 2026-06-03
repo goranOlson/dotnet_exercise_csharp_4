@@ -18,6 +18,8 @@ namespace dotnet_exercise_csharp_4
             devices.Add(new Refrigerator("Cylinda", 4));
             devices.Add(new Oven("Husqvarna", 300));
             devices.Add(new RobotVacuum("iRobot", 50));
+            // 
+            devices.Add(new CoffeeMachine("Xx", 4));
 
             RunMorningRoutine(devices);
             Console.WriteLine();
@@ -54,8 +56,8 @@ namespace dotnet_exercise_csharp_4
                         robotVacuum.StopCleaning();
                         break;
                     default:
-                        Console.WriteLine(">>>> Classtype not implemented! <<<<");
-                        throw new NotImplementedException();
+                        // Console.WriteLine($"{Environment.NewLine}>>>> Classtype '{className}' not implemented! <<<<");
+                        // throw new NotImplementedException();
                         break;
                 }
             }
@@ -81,21 +83,20 @@ namespace dotnet_exercise_csharp_4
                         Oven oven = (Oven)device;
                         oven.PrintHeatingEnergy();
                         break;
-                    case "RobotVacuu":
+                    case "RobotVacuum":
                         RobotVacuum robotVacuum = (RobotVacuum)device;
                         robotVacuum.PrintCleaningEnergy();
                         break;
                     default:
-                        Console.WriteLine(">>>> Classtype not implemented! <<<<");
-                        throw new NotImplementedException();
+                        // Console.WriteLine($"{Environment.NewLine}>>>> Classtype '{className}' is not implemented! <<<<");
+                        // throw new NotImplementedException();
                         break;
                 }
             }
         }
 
 
-        /* 
-            Reflektionsfrågor del 1
+        /*  Reflektionsfrågor del 1
             -----------------------
             1) Vi behöver veta objektstyp för att kunna casta objektet så vi kommer åt rätt metoder.
             2) Inget händer eftersom koden enbart anropar kända objektstyper i våra loopar.
@@ -104,5 +105,12 @@ namespace dotnet_exercise_csharp_4
             5) Inget! Endast kända objekttyper kommer att anropas.
         */
 
+        /*  Reflektionsfrågor del 2
+            -----------------------
+            För att det nya objektet 'CoffeeMachine' ska köras måste vi ändra i metoderna 
+            RunMorningRoutine och ReportAllEnergy så att även de körs.
+         
+         
+         */
     }
 }
