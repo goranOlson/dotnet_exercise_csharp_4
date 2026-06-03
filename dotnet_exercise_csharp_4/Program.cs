@@ -19,7 +19,7 @@ namespace dotnet_exercise_csharp_4
             devices.Add(new Oven("Husqvarna", 300));
             devices.Add(new RobotVacuum("iRobot", 50));
             // 
-            devices.Add(new CoffeeMachine("Xx", 4));
+            devices.Add(new CoffeeMachine("CoffeeMaker", 4));
 
             RunMorningRoutine(devices);
             Console.WriteLine();
@@ -109,8 +109,6 @@ namespace dotnet_exercise_csharp_4
             -----------------------
             För att det nya objektet 'CoffeeMachine' ska köras måste vi ändra i metoderna 
             RunMorningRoutine och ReportAllEnergy så att även de körs.
-         
-         
-         */
+        */
     }
 }

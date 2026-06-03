@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace dotnet_exercise_csharp_4
+﻿namespace dotnet_exercise_csharp_4
 {
     internal class CoffeeMachine
     {
