@@ -17,6 +17,7 @@ namespace dotnet_exercise_csharp_4
             devices.Add(new Washer("Electrolux", 8));
             devices.Add(new Refrigerator("Cylinda", 4));
             devices.Add(new Oven("Husqvarna", 300));
+            devices.Add(new RobotVacuum("iRobot", 50));
 
             RunMorningRoutine(devices);
             Console.WriteLine();
@@ -34,29 +35,29 @@ namespace dotnet_exercise_csharp_4
                 // 3. Anropa rätt startmetod.
                 // 4. Anropa rätt stoppmetod.
 
-                //Console.WriteLine("GetType() => " + device.GetType());
-                //Console.WriteLine("Name: " + device.GetType().Name);
-                string className = device.GetType().Name;
+                string className = device.GetType().Name;  // Washer
                 
                 switch (className)
                 {
                     case "Washer":
-                        Console.WriteLine("=> Washer");
                         Washer washer = (Washer)device;
                         washer.StartWash();
                         washer.StopWash();
                         break;
                     case "Refrigerator":
-                        Console.WriteLine("=> Refrigerator");
                         Refrigerator refrigerator = (Refrigerator)device;
                         refrigerator.StartCooling();
                         refrigerator.StopCooling();
                         break;
                     case "Oven":
-                        Console.WriteLine("=> Oven");
                         Oven oven = (Oven)device;
                         oven.StartHeating();
                         oven.StopHeating();
+                        break;
+                    case "RobotVacuum":
+                        RobotVacuum robotVacuum = (RobotVacuum)device;
+                        robotVacuum.StartCleaning();
+                        robotVacuum.StopCleaning();
                         break;
                     default:
                         Console.WriteLine(">>>> Classtype not implemented! <<<<");
@@ -74,24 +75,25 @@ namespace dotnet_exercise_csharp_4
                 // 2. Casta till rätt typ.
                 // 3. Anropa rätt energimetod.
 
-                string className = device.GetType().Name;
+                string className = device.GetType().Name;  // "Washer"
 
                 switch (className)
                 {
                     case "Washer":
-                        Console.WriteLine("=> Washer");
                         Washer washer = (Washer)device;
                         washer.PrintWashEnergy();
                         break;
                     case "Refrigerator":
-                        Console.WriteLine("=> Refrigerator");
                         Refrigerator refrigerator = (Refrigerator)device;
                         refrigerator.PrintCoolingEnergy();
                         break;
                     case "Oven":
-                        Console.WriteLine("=> Oven");
                         Oven oven = (Oven)device;
                         oven.PrintHeatingEnergy();
+                        break;
+                    case "RobotVacuum":
+                        RobotVacuum robotVacuum = (RobotVacuum)device;
+                        robotVacuum.PrintCleaningEnergy();
                         break;
                     default:
                         Console.WriteLine(">>>> Classtype not implemented! <<<<");
