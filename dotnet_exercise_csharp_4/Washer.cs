@@ -1,39 +1,31 @@
-﻿namespace dotnet_exercise_csharp_4
+﻿public class Washer
 {
-    partial class Program
+    public string Brand { get; }
+    public int CapacityKg { get; }
+
+    public Washer(string brand, int capacityKg)
     {
-        public class Washer
-        {
-            public string Brand { get; }
-            public int CapacityKg { get; }
+        Brand = brand;
+        CapacityKg = capacityKg;
+    }
 
-            public Washer(string brand, int capacityKg)
-            {
-                Brand = brand;
-                CapacityKg = capacityKg;
-            }
+    public void StartWash()
+    {
+        Console.WriteLine("StartWash");
+    }
 
-            public void StartWash()
-            {
-                Console.WriteLine("StartWash()");
-            }
+    public void StopWash()
+    {
+        Console.WriteLine("StopWash");
+    }
 
-            public void StopWash()
-            {
-                Console.WriteLine("StopWash()");
-            }
+    public void PrintWashEnergy()
+    {
+        Console.WriteLine("PrintWashEnergy");
+    }
 
-            public void PrintWashEnergy()
-            {
-                Console.WriteLine("PrintWashEnergy()");
-            }
-
-
-
-            public override string ToString()
-            {
-                return $"{Brand} {CapacityKg} kg";
-            }
-        }
+    public override string ToString()
+    {
+        return $"{Brand} {CapacityKg} kg";
     }
 }
