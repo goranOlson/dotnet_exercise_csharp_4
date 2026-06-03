@@ -1,4 +1,4 @@
-﻿public class Refrigerator
+﻿internal class Refrigerator
 {
     public string Brand { get; }
     public int Temperature { get; }
@@ -22,11 +22,6 @@
     public void PrintCoolingEnergy()
     {
         Console.WriteLine("PrintCoolingEnergy");
-    }
-
-    public override string ToString()
-    {
-        return $"{Brand} {Temperature} °";
     }
 }
 

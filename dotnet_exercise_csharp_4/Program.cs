@@ -16,6 +16,7 @@ namespace dotnet_exercise_csharp_4
 
             devices.Add(new Washer("Electrolux", 8));
             devices.Add(new Refrigerator("Cylinda", 4));
+            devices.Add(new Oven("Husqvarna", 300));
 
             RunMorningRoutine(devices);
             Console.WriteLine();
@@ -51,6 +52,12 @@ namespace dotnet_exercise_csharp_4
                         refrigerator.StartCooling();
                         refrigerator.StopCooling();
                         break;
+                    case "Oven":
+                        Console.WriteLine("=> Oven");
+                        Oven oven = (Oven)device;
+                        oven.StartHeating();
+                        oven.StopHeating();
+                        break;
                     default:
                         Console.WriteLine(">>>> Classtype not implemented! <<<<");
                         break;
@@ -80,6 +87,11 @@ namespace dotnet_exercise_csharp_4
                         Console.WriteLine("=> Refrigerator");
                         Refrigerator refrigerator = (Refrigerator)device;
                         refrigerator.PrintCoolingEnergy();
+                        break;
+                    case "Oven":
+                        Console.WriteLine("=> Oven");
+                        Oven oven = (Oven)device;
+                        oven.PrintHeatingEnergy();
                         break;
                     default:
                         Console.WriteLine(">>>> Classtype not implemented! <<<<");

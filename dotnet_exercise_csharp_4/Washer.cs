@@ -1,4 +1,4 @@
-﻿public class Washer
+﻿internal class Washer
 {
     public string Brand { get; }
     public int CapacityKg { get; }
@@ -22,10 +22,5 @@
     public void PrintWashEnergy()
     {
         Console.WriteLine("PrintWashEnergy");
-    }
-
-    public override string ToString()
-    {
-        return $"{Brand} {CapacityKg} kg";
     }
 }
