@@ -5,6 +5,8 @@
         public string Brand { get; }
         public uint MaxTemperature { get; }
 
+        private readonly double kWhPerHour = 2.4;
+
         public Oven(string brand, uint maxTemperature)
         {
             Brand = brand;
@@ -13,17 +15,17 @@
 
         public void StartHeating()
         {
-            Console.WriteLine("StartHeating");
+            Console.WriteLine($"{Brand} oven starts heating.");
         }
 
         public void StopHeating()
         {
-            Console.WriteLine("StopHeating");
+            Console.WriteLine($"{Brand} oven stops heating.");
         }
 
         public void PrintHeatingEnergy()
         {
-            Console.WriteLine("PrintHeatingEnergy");
+            Console.WriteLine($"{Brand} oven uses {kWhPerHour} kWh per hour.");
         }
     }
 }

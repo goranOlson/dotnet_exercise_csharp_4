@@ -5,6 +5,8 @@
         public string Brand { get; }
         public uint BatteryLevel { get; }
 
+        private readonly double kWhPerRun = 0.4;
+
         public RobotVacuum(string brand, uint batteryLevel)
         {
             Brand = brand;
@@ -13,17 +15,18 @@
 
         public void StartCleaning()
         {
-            Console.WriteLine("StartCleaning");
+            Console.WriteLine($"{Brand} robot vacuum starts cleaning.");
         }
 
         public void StopCleaning()
         {
-            Console.WriteLine("StopCleaning");
+            Console.WriteLine($"{Brand} robot vacuum stops cleaning.");
+
         }
 
         public void PrintCleaningEnergy()
         {
-            Console.WriteLine("PrintCleaningEnergy");
+            Console.WriteLine($"{Brand} robot vacuum uses {kWhPerRun} kWh per cleaning.");
         }
     }
 }
