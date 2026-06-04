@@ -9,23 +9,28 @@ namespace dotnet_exercise_csharp_4
     {
         static void Main()
         {
-            List<Appliance> devices = new List<Appliance>();
+            // Create appliances
+            SmartHomeController controller = new SmartHomeController();
 
-            // Add 4 appliances to devices
-            devices.Add(new Washer("Electrolux", "Laundry room", 8));
-            devices.Add(new Refrigerator("Cylinda", "Kitchen", 4));
-            devices.Add(new Oven("Husqvarna", "Kitchen", 300));
-            devices.Add(new RobotVacuum("iRobot", "Hallway", 50));
-            devices.Add(new CoffeeMachine("CoffeeMaker", "Kitchen", 4));
+            controller.AddDevice(new Washer("Electrolux", "Laundry room", 8));
+            controller.AddDevice(new Refrigerator("Cylinda", "Kitchen", 4));
+            controller.AddDevice(new Oven("Husqvarna", "Kitchen", 300));
+            controller.AddDevice(new RobotVacuum("iRobot", "Hallway", 50));
+            controller.AddDevice(new CoffeeMachine("CoffeeMaker", "Kitchen", 4));
 
-            foreach(Appliance device in devices)
-            {
-                Console.WriteLine(device.GetInfo());
-                device.TurnOff();
-                Console.WriteLine($"Daily energy usage: " + device.GetDailyEnergyUsage() + " for " + device.GetType().Name);
-                device.TurnOff();
-                Console.WriteLine();
-            }
+            // Running the day's chores
+            controller.PrintStatusReport();
+            Console.WriteLine();
+            
+            controller.TurnOnAll();
+            Console.WriteLine();
+            
+            double totalEnegry = controller.GetTotalDailyEnergyUsage();
+            Console.WriteLine($"Total daily energy usage: {totalEnegry} kWh");
+            Console.WriteLine();
+
+            controller.TurnOffAll();
+
         }
 
         /*  Reflektionsfrågor del 1

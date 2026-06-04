@@ -20,7 +20,7 @@
         public override void TurnOn()
         {
             IsOn = true;
-            Console.WriteLine($"{Brand}coffee machine starts brewing.");
+            Console.WriteLine($"{Brand} coffee machine starts brewing.");
         }
 
         public override void TurnOff()
