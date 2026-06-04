@@ -1,4 +1,4 @@
-﻿namespace dotnet_exercise_csharp_4
+﻿namespace dotnet_exercise_csharp_4.Classes
 {
     internal class CoffeeMachine
     {

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using dotnet_exercise_csharp_4.Classes;
+using System.Diagnostics;
 using System.Runtime.InteropServices.Swift;
 using static dotnet_exercise_csharp_4.Program;
 
@@ -14,8 +15,8 @@ namespace dotnet_exercise_csharp_4
             // Washer, Refrigerator, Oven och RobotVacuum.
             // Lägg till dem i listan devices.
 
-            devices.Add(new Washer("Electrolux", 8));
-            devices.Add(new Refrigerator("Cylinda", 4));
+            devices.Add(new Washer("Electrolux", "Laundry room", 8));
+            devices.Add(new Refrigerator("Cylinda", "Kitchen", 4));
             devices.Add(new Oven("Husqvarna", 300));
             devices.Add(new RobotVacuum("iRobot", 50));
             // 
@@ -36,7 +37,7 @@ namespace dotnet_exercise_csharp_4
                 switch (className)
                 {
                     case "Washer":
-                        Washer washer = (Washer)device;
+                        Washer2 washer = (Washer2)device;
                         washer.StartWash();
                         washer.StopWash();
                         break;
@@ -72,7 +73,7 @@ namespace dotnet_exercise_csharp_4
                 switch (className)
                 {
                     case "Washer":
-                        Washer washer = (Washer)device;
+                        Washer2 washer = (Washer2)device;
                         washer.PrintWashEnergy();
                         break;
                     case "Refrigerator":
