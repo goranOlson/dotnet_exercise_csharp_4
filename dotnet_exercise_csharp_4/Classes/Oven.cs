@@ -1,31 +1,39 @@
 ﻿namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class Oven
+    internal class Oven : Appliance
     {
-        public string Brand { get; }
         public uint MaxTemperature { get; }
 
-        private readonly double kWhPerHour = 2.4;
+        // private readonly double kWhPerHour = 2.4;
 
-        public Oven(string brand, uint maxTemperature)
+        private readonly double dailyEnergyConsumption = 2.5;
+
+        public Oven(string brand, string room, uint maxTemperature) : base(brand, room)
         {
-            Brand = brand;
             MaxTemperature = maxTemperature;
         }
-
-        public void StartHeating()
+        public override string GetInfo()
         {
+            string state = IsOn ? "running" : "off";
+            string place = Room.ToLower();
+            return $"{Brand} oven is in the {place} and is {state}.";
+        }
+
+        public override void TurnOn()
+        {
+            IsOn = true;
             Console.WriteLine($"{Brand} oven starts heating.");
         }
 
-        public void StopHeating()
+        public override void TurnOff()
         {
+            IsOn = false;
             Console.WriteLine($"{Brand} oven stops heating.");
         }
 
-        public void PrintHeatingEnergy()
+        public override double GetDailyEnergyUsage()
         {
-            Console.WriteLine($"{Brand} oven uses {kWhPerHour} kWh per hour.");
+            return dailyEnergyConsumption;
         }
     }
 }

@@ -2,14 +2,13 @@
 {
     internal class Washer : Appliance
     {
-        // public string Brand { get; }
-        public int CapacityKg { get; }
+        public uint CapacityKg { get; }
 
-        private readonly double kWhPerWashing = 1.2;
+        // private readonly double kWhPerWashing = 1.2;
 
         private readonly double dailyEnergyConsumption = 1.2;
 
-        public Washer(string brand, string room, int capacityKg) : base(brand, room)
+        public Washer(string brand, string room, uint capacityKg) : base(brand, room)
         {
             CapacityKg = capacityKg;
         }

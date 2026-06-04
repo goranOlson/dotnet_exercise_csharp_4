@@ -1,32 +1,39 @@
 ﻿namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class RobotVacuum
+    internal class RobotVacuum : Appliance
     {
-        public string Brand { get; }
         public uint BatteryLevel { get; }
 
-        private readonly double kWhPerRun = 0.4;
+        // private readonly double kWhPerRun = 0.4;
 
-        public RobotVacuum(string brand, uint batteryLevel)
+        private readonly double dailyEnergyConsumption = 0.4;
+
+        public RobotVacuum(string brand, string room, uint batteryLevel) : base(brand, room)
         {
-            Brand = brand;
             BatteryLevel = batteryLevel;
         }
-
-        public void StartCleaning()
+        public override string GetInfo()
         {
+            string state = IsOn ? "running" : "off";
+            string place = Room.ToLower();
+            return $"{Brand} robot vacuum is in the {place} and is {state}.";
+        }
+
+        public override void TurnOn()
+        {
+            IsOn = true;
             Console.WriteLine($"{Brand} robot vacuum starts cleaning.");
         }
 
-        public void StopCleaning()
+        public override void TurnOff()
         {
+            IsOn = false;
             Console.WriteLine($"{Brand} robot vacuum stops cleaning.");
-
         }
 
-        public void PrintCleaningEnergy()
+        public override double GetDailyEnergyUsage()
         {
-            Console.WriteLine($"{Brand} robot vacuum uses {kWhPerRun} kWh per cleaning.");
+            return dailyEnergyConsumption;
         }
     }
 }

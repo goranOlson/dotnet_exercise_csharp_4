@@ -17,10 +17,9 @@ namespace dotnet_exercise_csharp_4
 
             devices.Add(new Washer("Electrolux", "Laundry room", 8));
             devices.Add(new Refrigerator("Cylinda", "Kitchen", 4));
-            devices.Add(new Oven("Husqvarna", 300));
-            devices.Add(new RobotVacuum("iRobot", 50));
-            // 
-            devices.Add(new CoffeeMachine("CoffeeMaker", 4));
+            devices.Add(new Oven("Husqvarna", "Kitchen", 300));
+            devices.Add(new RobotVacuum("iRobot", "Hallway", 50));
+            devices.Add(new CoffeeMachine("CoffeeMaker", "Kitchen", 4));
 
             RunMorningRoutine(devices);
             Console.WriteLine();
@@ -37,7 +36,7 @@ namespace dotnet_exercise_csharp_4
                 switch (className)
                 {
                     case "Washer":
-                        Washer2 washer = (Washer2)device;
+                        Washer washer = (Washer)device;
                         washer.StartWash();
                         washer.StopWash();
                         break;
