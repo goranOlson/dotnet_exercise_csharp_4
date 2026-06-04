@@ -22,7 +22,7 @@ namespace dotnet_exercise_csharp_4
             {
                 Console.WriteLine(device.GetInfo());
                 device.TurnOff();
-                Console.WriteLine($"Daily energy usage: " + device.GetDailyEnergyUsage());
+                Console.WriteLine($"Daily energy usage: " + device.GetDailyEnergyUsage() + " for " + device.GetType().Name);
                 device.TurnOff();
                 Console.WriteLine();
             }
