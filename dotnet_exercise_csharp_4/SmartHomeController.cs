@@ -33,16 +33,18 @@ namespace dotnet_exercise_csharp_4
             {
                 Console.WriteLine(device.GetInfo());
             }
-        }
+        } 
 
         public double GetTotalDailyEnergyUsage()
         {
             double sum = 0;
 
-            foreach(Appliance device in _devices)
-            {
-                sum += device.GetDailyEnergyUsage();
-            }
+            //foreach(Appliance device in _devices)
+            //{
+            //    sum += device.GetDailyEnergyUsage();
+            //}
+
+            _devices.ForEach(device => sum += device.GetDailyEnergyUsage());
 
             return sum;
         }

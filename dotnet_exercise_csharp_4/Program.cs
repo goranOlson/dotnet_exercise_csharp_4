@@ -18,6 +18,8 @@ namespace dotnet_exercise_csharp_4
             controller.AddDevice(new RobotVacuum("iRobot", "Hallway", 50));
             controller.AddDevice(new CoffeeMachine("CoffeeMaker", "Kitchen", 4));
 
+            controller.AddDevice(new AirConditioner("Samsung", "Living room", 38));
+
             // Running the day's chores
             controller.PrintStatusReport();
             Console.WriteLine();
