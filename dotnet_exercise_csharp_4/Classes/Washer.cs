@@ -4,8 +4,6 @@
     {
         public uint CapacityKg { get; }
 
-        // private readonly double kWhPerWashing = 1.2;
-
         private readonly double dailyEnergyConsumption = 1.2;
 
         public Washer(string brand, string room, uint capacityKg) : base(brand, room)

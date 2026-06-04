@@ -4,8 +4,6 @@
     {
         public uint BatteryLevel { get; }
 
-        // private readonly double kWhPerRun = 0.4;
-
         private readonly double dailyEnergyConsumption = 0.4;
 
         public RobotVacuum(string brand, string room, uint batteryLevel) : base(brand, room)

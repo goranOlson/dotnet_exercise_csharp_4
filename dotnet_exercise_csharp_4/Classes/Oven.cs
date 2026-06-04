@@ -4,8 +4,6 @@
     {
         public uint MaxTemperature { get; }
 
-        // private readonly double kWhPerHour = 2.4;
-
         private readonly double dailyEnergyConsumption = 2.5;
 
         public Oven(string brand, string room, uint maxTemperature) : base(brand, room)

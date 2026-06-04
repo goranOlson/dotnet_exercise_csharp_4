@@ -4,7 +4,7 @@
     {
         public int Temperature { get; }
 
-        // private readonly double dailyEnergyConsumption = 3.6;
+        private readonly double dailyEnergyConsumption = 3.6;
 
         public Refrigerator(string brand, string room, int temperature) : base(brand, room)
         {

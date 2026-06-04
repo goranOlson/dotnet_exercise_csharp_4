@@ -4,8 +4,6 @@
     {
         public uint CupsPerBrew { get; }
 
-        // private readonly double kWhPerBrewing = 1.8;
-
         private readonly double dailyEnergyConsumption = 0.4;
 
         public CoffeeMachine(string brand, string room, uint cupsPerBrew) : base(brand, room)
