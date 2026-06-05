@@ -37,6 +37,14 @@ namespace dotnet_exercise_csharp_4
 
             // Set schedule for som devices
             controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));
+            Console.WriteLine();
+
+            // Test with 'new TurnOn()'
+            SmartLamp lamp1 = new SmartLamp("IKEA", "Hallway", 80);
+            Appliance lamp2 = lamp1;
+            lamp1.TurnOn();
+            lamp2.TurnOn();
+
         }
 
 
@@ -67,14 +75,26 @@ namespace dotnet_exercise_csharp_4
             4) Skulle metoden Schedule ligga i Appliance får alla tillgång till metoden. Då kan vi inte filtrera ut de
                objekt som vi vill ska ha metoden.
 
-     5) ToDo - Vad är skillnaden mellan arv och interface i det här exemplet?
+5) ToDo - Vad är skillnaden mellan arv och interface i det här exemplet?
 
             Reflektionsfrågor del 10
             ------------------------
             a) Koden godkänns inte av kompilatorn eftersom metoden i Appliance inte är markerad som virtual.
-            b) Utan override i Washer så körs TurnOn() i Appliance. 
+            b) Utan override i Washer så körs TurnOn() i Appliance. Visual studio föreslår använding av 'new'.
             
-            
+            Reflektionsfrågor del 11
+            ------------------------
+            1) Det blev olika utskrifter.
+            2) SmartLamp egen TurnOn() körs när objektet är av typen SmartLamp.
+            3) Appliance TurnOn() körs när objektet är av typen Appliance.
+            4) Om vi loopar objekt så tror vi att vi ska få child-klassens metod, men vi får basklassens metod med 'new'.
+            5) Om vi använder override så körs child-klassens metod även om variablen är av typ Appliance.
+            6) Med 'new' så används TurnOn() i Appliance om variabeln är av typen Appliance. Med 'override' 
+               så används alltid TurnOn() i SmartLamp.
+
+
+        La till kod för att visa skillnaden
+
         */
     }
 }

@@ -21,7 +21,7 @@ namespace dotnet_exercise_csharp_4.Classes
             return $"{Brand} washer is in the {place} and is {state}.";
         }
         
-        // Utan override så körs metoden i Appliance. 
+        // Utan override så körs metoden i Appliance. Visual Studio föreslår användning av 'new'.
         public override void TurnOn()
         {
             IsOn = true;
