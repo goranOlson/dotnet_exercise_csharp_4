@@ -1,7 +1,4 @@
 ﻿using dotnet_exercise_csharp_4.Classes;
-using System.Diagnostics;
-using System.Runtime.InteropServices.Swift;
-using static dotnet_exercise_csharp_4.Program;
 
 namespace dotnet_exercise_csharp_4
 {
@@ -17,7 +14,8 @@ namespace dotnet_exercise_csharp_4
             controller.AddDevice(new Oven("Husqvarna", "Kitchen", 300));
             controller.AddDevice(new RobotVacuum("iRobot", "Hallway", 50));
             controller.AddDevice(new CoffeeMachine("CoffeeMaker", "Kitchen", 4));
-
+            
+            // Add extra appliance
             controller.AddDevice(new AirConditioner("Samsung", "Living room", 38));
 
             // Running the day's chores
@@ -27,8 +25,9 @@ namespace dotnet_exercise_csharp_4
             controller.TurnOnAll();
             Console.WriteLine();
             
+            // Present all appliances total daily energy usage
             double totalEnegry = controller.GetTotalDailyEnergyUsage();
-            Console.WriteLine($"Total daily energy usage: {totalEnegry} kWh");
+            Console.WriteLine("Total daily energy usage: {0:0.00} kWh", totalEnegry);
             Console.WriteLine();
 
             controller.TurnOffAll();
@@ -42,15 +41,13 @@ namespace dotnet_exercise_csharp_4
             3) Vi behöver ändra de metoder som anropar listans objekt: RunMorningRoutine och ReportAllEnergy.
             4) Listan devices tar vilka objekt om helst. Vilket gör att okända objekt aldrig anropas.
             5) Inget! Endast kända objekttyper kommer att anropas.
-        */
 
-        /*  Reflektionsfrågor del 2
+            Reflektionsfrågor del 2
             -----------------------
             För att det nya objektet 'CoffeeMachine' ska köras måste vi ändra i metoderna 
             RunMorningRoutine och ReportAllEnergy så att även de körs.
-        */
-
-        /*  Reflektionsfrågor del 5
+        
+            Reflektionsfrågor del 5
             -----------------------
             1) Det fungerar eftersom alla objekten äver av Appliance.
             2) Om RobotVacuum har metoden implementera så körs den egna metoden, annars körs metoden i Appliance.
