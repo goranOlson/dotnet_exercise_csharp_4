@@ -18,6 +18,7 @@
             return $"{Brand} in {Room}";
         }
 
+        // Utan virtual så kan vi inte göra override i de ärvande klasserna
         public virtual void TurnOn()
         {
             IsOn = true;

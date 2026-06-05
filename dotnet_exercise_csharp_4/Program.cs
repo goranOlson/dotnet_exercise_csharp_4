@@ -69,7 +69,11 @@ namespace dotnet_exercise_csharp_4
 
      5) ToDo - Vad är skillnaden mellan arv och interface i det här exemplet?
 
-
+            Reflektionsfrågor del 10
+            ------------------------
+            a) Koden godkänns inte av kompilatorn eftersom metoden i Appliance inte är markerad som virtual.
+            b) Utan override i Washer så körs TurnOn() i Appliance. 
+            
             
         */
     }

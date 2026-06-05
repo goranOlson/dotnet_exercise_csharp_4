@@ -20,7 +20,8 @@ namespace dotnet_exercise_csharp_4.Classes
             string place = Room.ToLower();
             return $"{Brand} washer is in the {place} and is {state}.";
         }
-
+        
+        // Utan override så körs metoden i Appliance. 
         public override void TurnOn()
         {
             IsOn = true;
