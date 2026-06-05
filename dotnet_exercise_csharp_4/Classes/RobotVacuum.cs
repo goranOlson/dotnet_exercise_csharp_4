@@ -1,8 +1,15 @@
-﻿namespace dotnet_exercise_csharp_4.Classes
+﻿using dotnet_exercise_csharp_4.Interfaces;
+
+namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class RobotVacuum : Appliance
+    internal class RobotVacuum : Appliance, ISchedulable
     {
         public uint BatteryLevel { get; }
+        public DateTime NextRun
+        {
+            get => NextRun;
+            set => throw new NotImplementedException();
+        }
 
         private readonly double dailyEnergyConsumption = 0.4;
 
@@ -10,6 +17,7 @@
         {
             BatteryLevel = batteryLevel;
         }
+        
         public override string GetInfo()
         {
             string state = IsOn ? "running" : "off";
@@ -32,6 +40,11 @@
         public override double GetDailyEnergyUsage()
         {
             return dailyEnergyConsumption;
+        }
+
+        public void Schedule(DateTime time)
+        {
+            throw new NotImplementedException();
         }
     }
 }

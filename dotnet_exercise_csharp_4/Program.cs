@@ -34,6 +34,12 @@ namespace dotnet_exercise_csharp_4
 
         }
 
+
+
+
+
+
+
         /*  Reflektionsfrågor del 1
             -----------------------
             1) Vi behöver veta objektstyp för att kunna casta objektet så vi kommer åt rätt metoder.

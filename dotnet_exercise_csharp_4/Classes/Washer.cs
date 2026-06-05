@@ -1,8 +1,15 @@
-﻿namespace dotnet_exercise_csharp_4.Classes
+﻿using dotnet_exercise_csharp_4.Interfaces;
+
+namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class Washer : Appliance
+    internal class Washer : Appliance, ISchedulable
     {
         public uint CapacityKg { get; }
+        public DateTime NextRun
+        { 
+            get => NextRun;
+            set => throw new NotImplementedException();
+        }
 
         private readonly double dailyEnergyConsumption = 1.2;
 
@@ -33,6 +40,11 @@
         public override double GetDailyEnergyUsage()
         {
             return dailyEnergyConsumption;
+        }
+
+        public void Schedule(DateTime time)
+        {
+            throw new NotImplementedException();
         }
     }
 }

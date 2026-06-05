@@ -1,8 +1,17 @@
-﻿namespace dotnet_exercise_csharp_4.Classes
+﻿using dotnet_exercise_csharp_4.Interfaces;
+
+namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class CoffeeMachine : Appliance
+    internal class CoffeeMachine : Appliance, ISchedulable
     {
         public uint CupsPerBrew { get; }
+        public DateTime NextRun
+        { 
+            get => NextRun;
+            set => throw new NotImplementedException();
+        }
+
+        
 
         private readonly double dailyEnergyConsumption = 0.4;
 
@@ -34,6 +43,10 @@
             return dailyEnergyConsumption;
         }
 
-
+        public void Schedule(DateTime time)
+        {
+            //throw new NotImplementedException();
+            NextRun = time;
+        }
     }
 }
