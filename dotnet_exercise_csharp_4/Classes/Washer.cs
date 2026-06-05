@@ -5,11 +5,7 @@ namespace dotnet_exercise_csharp_4.Classes
     internal class Washer : Appliance, ISchedulable
     {
         public uint CapacityKg { get; }
-        public DateTime NextRun
-        { 
-            get => NextRun;
-            set => throw new NotImplementedException();
-        }
+        public DateTime NextRun { get; set; }
 
         private readonly double dailyEnergyConsumption = 1.2;
 
@@ -44,7 +40,8 @@ namespace dotnet_exercise_csharp_4.Classes
 
         public void Schedule(DateTime time)
         {
-            throw new NotImplementedException();
+            NextRun = time;
+            Console.WriteLine($"{Brand} washer is now schedualed to wash at " + NextRun.ToString("yyyy-MM-dd HH:mm:ss"));
         }
     }
 }

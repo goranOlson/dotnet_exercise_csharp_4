@@ -5,13 +5,7 @@ namespace dotnet_exercise_csharp_4.Classes
     internal class CoffeeMachine : Appliance, ISchedulable
     {
         public uint CupsPerBrew { get; }
-        public DateTime NextRun
-        { 
-            get => NextRun;
-            set => throw new NotImplementedException();
-        }
-
-        
+        public DateTime NextRun { get; set; }
 
         private readonly double dailyEnergyConsumption = 0.4;
 
@@ -45,8 +39,8 @@ namespace dotnet_exercise_csharp_4.Classes
 
         public void Schedule(DateTime time)
         {
-            //throw new NotImplementedException();
             NextRun = time;
+            Console.WriteLine($"{Brand} coffee machine is now schedualed to start brewing at " + NextRun.ToString("yyyy-MM-dd HH:mm:ss"));
         }
     }
 }

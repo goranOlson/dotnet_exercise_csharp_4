@@ -1,4 +1,5 @@
 ﻿using dotnet_exercise_csharp_4.Classes;
+using dotnet_exercise_csharp_4.Interfaces;
 
 namespace dotnet_exercise_csharp_4
 {
@@ -48,5 +49,28 @@ namespace dotnet_exercise_csharp_4
 
             return sum;
         }
+    
+        public void ScheduleAllDevicesWrong(DateTime time)
+        {
+            foreach(Appliance device in _devices)
+            {
+                // device.Schedule(time);
+                // Denna kompilerar inte eftersom klassen Appliance inte har metoden Schedule(time)
+            }
+        }
+
+        public void ScheduleAllSchedulableDevices(DateTime time)
+        {
+            foreach (Appliance device in _devices)
+            {
+                // or "if (device is ISchedulable)"
+                if (device is ISchedulable schedulable)
+                {
+                    schedulable.Schedule(time);
+                }
+            }
+        }
+
+
     }
 }

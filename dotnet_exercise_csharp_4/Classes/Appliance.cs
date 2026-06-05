@@ -36,11 +36,3 @@
         }
     }
 }
-
-/*
-    Fridge
-    HairDryer
-    Iron
-    Microwave
-    WaterBoiler
- */

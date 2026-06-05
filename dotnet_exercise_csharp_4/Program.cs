@@ -18,10 +18,11 @@ namespace dotnet_exercise_csharp_4
             // Add extra appliance
             controller.AddDevice(new AirConditioner("Samsung", "Living room", 38));
 
-            // Running the day's chores
+            // Show devices status
             controller.PrintStatusReport();
             Console.WriteLine();
             
+            // Running the day's chores
             controller.TurnOnAll();
             Console.WriteLine();
             
@@ -30,14 +31,13 @@ namespace dotnet_exercise_csharp_4
             Console.WriteLine("Total daily energy usage: {0:0.00} kWh", totalEnegry);
             Console.WriteLine();
 
+            // Stop all devices
             controller.TurnOffAll();
+            Console.WriteLine();
 
+            // Set schedule for som devices
+            controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));
         }
-
-
-
-
-
 
 
         /*  Reflektionsfrågor del 1
@@ -50,7 +50,7 @@ namespace dotnet_exercise_csharp_4
 
             Reflektionsfrågor del 2
             -----------------------
-            För att det nya objektet 'CoffeeMachine' ska köras måste vi ändra i metoderna 
+            För att det nya objektet 'CoffeeMachine' ska köras måste vi ändra i metoderna.
             RunMorningRoutine och ReportAllEnergy så att även de körs.
         
             Reflektionsfrågor del 5
@@ -58,6 +58,19 @@ namespace dotnet_exercise_csharp_4
             1) Det fungerar eftersom alla objekten äver av Appliance.
             2) Om RobotVacuum har metoden implementera så körs den egna metoden, annars körs metoden i Appliance.
             3) Det blev lättare att loopa eftersom vi inte behöver se vilken typ av objekt som ska användas.
+
+            Reflektionsfrågor del 9
+            -----------------------
+            1) Metoden Schedule finns inte i klassen Appliance.
+            2) Vi får bara med de objekt som har interfacet ISchedulable.
+            3) RobotVacuum ärver av klassen Appliance och måste implementera alla properties och metoder i ISchedulable.
+            4) Skulle metoden Schedule ligga i Appliance får alla tillgång till metoden. Då kan vi inte filtrera ut de
+               objekt som vi vill ska ha metoden.
+
+     5) ToDo - Vad är skillnaden mellan arv och interface i det här exemplet?
+
+
+            
         */
     }
 }
