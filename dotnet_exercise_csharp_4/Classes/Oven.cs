@@ -1,6 +1,6 @@
 ﻿namespace dotnet_exercise_csharp_4.Classes
 {
-    internal class Oven : Appliance
+    public class Oven : Appliance
     {
         public uint MaxTemperature { get; }
 
@@ -17,7 +17,7 @@
             return $"{Brand} oven is in the {place} and is {state}.";
         }
 
-        public override void TurnOn()
+        public sealed override void TurnOn()
         {
             IsOn = true;
             Console.WriteLine($"{Brand} oven starts heating.");

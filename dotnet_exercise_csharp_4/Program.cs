@@ -74,8 +74,7 @@ namespace dotnet_exercise_csharp_4
             3) RobotVacuum ärver av klassen Appliance och måste implementera alla properties och metoder i ISchedulable.
             4) Skulle metoden Schedule ligga i Appliance får alla tillgång till metoden. Då kan vi inte filtrera ut de
                objekt som vi vill ska ha metoden.
-
-5) ToDo - Vad är skillnaden mellan arv och interface i det här exemplet?
+            5) Med arv hade alla objekten körts. Genom att bara vissa klasser även har interface:et så kommer endast de att körs.
 
             Reflektionsfrågor del 10
             ------------------------
@@ -89,12 +88,16 @@ namespace dotnet_exercise_csharp_4
             3) Appliance TurnOn() körs när objektet är av typen Appliance.
             4) Om vi loopar objekt så tror vi att vi ska få child-klassens metod, men vi får basklassens metod med 'new'.
             5) Om vi använder override så körs child-klassens metod även om variablen är av typ Appliance.
-            6) Med 'new' så används TurnOn() i Appliance om variabeln är av typen Appliance. Med 'override' 
-               så används alltid TurnOn() i SmartLamp.
+            6) Med 'new' så används TurnOn() i Appliance om variabeln är av typen Appliance. Med 'override' så används 
+               TurnOn() i SmartLamp även om variabeln är av typen Appliance.
 
-
-        La till kod för att visa skillnaden
-
+            Reflektionsfrågor del 11
+            ------------------------
+            1) Kompilatorn klagar på att TurnOn() i klassen Oven är 'sealed' och därför inte kan override:as i klassen PizzaOven.
+            2) PizzaOven kan inte använda TurnOn() eftersom det är blockerat i Oven med tillägget 'sealed'.
+            3) Man kan använda 'sealed' när man vill att alla ärvande klasser ska tvingas använda en metod skapad tidigare i arvskedjan.
+            4) PizzaOven kan override:a alla metoder som inte är märkat 'sealed'.
         */
+
     }
 }
