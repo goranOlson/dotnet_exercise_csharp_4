@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace dotnet_exercise_csharp_4.Classes
+﻿namespace dotnet_exercise_csharp_4.Classes
 {
     public class PizzaOven : Oven
     {

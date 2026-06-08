@@ -48,11 +48,25 @@ namespace dotnet_exercise_csharp_4
             Console.WriteLine();
 
             // Get schedulable devices
-            // Console.WriteLine($"Scheduled appliances:{Environment.NewLine}---------------------");
             List<ISchedulable> schedulableDevices = controller.GetSchedulableDevices();
             foreach(ISchedulable schedulable in schedulableDevices)
             {
                 Console.WriteLine("Next scheduled run for type " + schedulable.GetType().Name + " is " + schedulable.NextRun);
+            }
+            Console.WriteLine();
+
+            // Hitta första apparat utifrån märke
+            // Schemalägg den om den har interfacet ISchedulable
+            Appliance? foundDevice = controller.FindDeviceByBrand("Cylinda");  // iRobot
+
+            if (foundDevice != null) {
+                foundDevice.TurnOn();
+
+                // Schedule appliances if it has the interface ISchedulable
+                if (foundDevice is ISchedulable schedulable)
+                {
+                    schedulable.Schedule(DateTime.Now.AddHours(3));
+                }
             }
 
         }

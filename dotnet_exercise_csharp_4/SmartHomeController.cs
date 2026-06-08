@@ -85,5 +85,13 @@ namespace dotnet_exercise_csharp_4
             }
             return result;
         }
+
+        public Appliance? FindDeviceByBrand(string brand)
+        {
+            Appliance? res = _devices.FirstOrDefault(d => d.Brand == brand);
+
+            return res;
+            // throw new NotImplementedException;
+        }
     }
 }

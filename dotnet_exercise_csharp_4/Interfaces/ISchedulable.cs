@@ -6,9 +6,9 @@
         void Schedule(DateTime time);
 
         // Test av Default Implementation...!
-        void Test(string str)
-        {
-            Console.WriteLine($"Test({str})");
-        }
+        //void Test(string str)
+        //{
+        //    Console.WriteLine($"Test({str})");
+        //}
     }
 }
