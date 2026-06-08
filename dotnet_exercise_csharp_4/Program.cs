@@ -1,4 +1,5 @@
 ﻿using dotnet_exercise_csharp_4.Classes;
+using dotnet_exercise_csharp_4.Interfaces;
 
 namespace dotnet_exercise_csharp_4
 {
@@ -44,6 +45,15 @@ namespace dotnet_exercise_csharp_4
             Appliance lamp2 = lamp1;
             lamp1.TurnOn();
             lamp2.TurnOn();
+            Console.WriteLine();
+
+            // Get schedulable devices
+            // Console.WriteLine($"Scheduled appliances:{Environment.NewLine}---------------------");
+            List<ISchedulable> schedulableDevices = controller.GetSchedulableDevices();
+            foreach(ISchedulable schedulable in schedulableDevices)
+            {
+                Console.WriteLine("Next scheduled run for type " + schedulable.GetType().Name + " is " + schedulable.NextRun);
+            }
 
         }
 
@@ -91,12 +101,16 @@ namespace dotnet_exercise_csharp_4
             6) Med 'new' så används TurnOn() i Appliance om variabeln är av typen Appliance. Med 'override' så används 
                TurnOn() i SmartLamp även om variabeln är av typen Appliance.
 
-            Reflektionsfrågor del 11
+            Reflektionsfrågor del 12
             ------------------------
             1) Kompilatorn klagar på att TurnOn() i klassen Oven är 'sealed' och därför inte kan override:as i klassen PizzaOven.
             2) PizzaOven kan inte använda TurnOn() eftersom det är blockerat i Oven med tillägget 'sealed'.
             3) Man kan använda 'sealed' när man vill att alla ärvande klasser ska tvingas använda en metod skapad tidigare i arvskedjan.
             4) PizzaOven kan override:a alla metoder som inte är märkat 'sealed'.
+
+            Reflektionsfrågor del 13
+            ------------------------
+            Vi kan ha klasser av olika typer i List<ISchedulable> eftersom de blir castat till ISchedulable.
         */
 
     }

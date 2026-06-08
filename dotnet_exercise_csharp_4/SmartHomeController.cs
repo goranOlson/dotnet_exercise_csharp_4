@@ -72,5 +72,18 @@ namespace dotnet_exercise_csharp_4
         }
 
 
+        internal List<ISchedulable> GetSchedulableDevices()
+        {
+            List<ISchedulable> result = new List<ISchedulable>();
+
+            foreach (Appliance device in _devices)
+            {
+                if (device is ISchedulable)
+                {
+                    result.Add((ISchedulable)device);
+                }
+            }
+            return result;
+        }
     }
 }
